@@ -1,7 +1,8 @@
 
 diceArray = []
 
-var sumDice = 
+var sumDice;
+var selectOneDie = document.getElementsByClassName('die');
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -32,6 +33,10 @@ function Die(){
     this.div.appendChild(this.value);
     document.body.appendChild(this.div);
 }
+
+Die.prototype.rollOne = selectOneDie.addEventListener('click', function(){
+    console.log('asdf');    
+})
 
 // Die.prototype.roll = function(){
 //     var rollDiceBtn = document.getElementById('rollDiceBtn');
