@@ -4,6 +4,7 @@ diceArray = []
 var sumDice;
 var selectOneDie = document.getElementsByClassName('die');
 
+
 document.addEventListener('DOMContentLoaded', function() {
     
     var newDieBtn = document.getElementById('newDieBtn');
@@ -20,7 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
            console.log(diceArray);
         });    
     })
+
+    var sumDiceBtn = document.getElementById('sumDiceBtn');
+    sumDiceBtn.addEventListener('click', sum);
+    
 });
+
+// var fi = '5';
+
+// Number(fi);
 
 function Die(){
     this.div = document.createElement('div');
@@ -29,14 +38,14 @@ function Die(){
     this.value = document.createElement('span');
     this.value.className = 'span'
     this.value.innerHTML = getRandomNumber();
+    parseInt(this.value);
+    
 
     this.div.appendChild(this.value);
     document.body.appendChild(this.div);
 }
 
-Die.prototype.rollOne = selectOneDie.addEventListener('click', function(){
-    console.log('asdf');    
-})
+
 
 // Die.prototype.roll = function(){
 //     var rollDiceBtn = document.getElementById('rollDiceBtn');
@@ -52,6 +61,23 @@ Die.prototype.rollOne = selectOneDie.addEventListener('click', function(){
 function getRandomNumber() {
     return Math.floor(Math.random() * 6 + 1);
 }
+
+
+function sum() {
+    var total = 0;
+
+    for(i = 0; i < diceArray.length; i++) {
+        
+       total = total + Number(diceArray[i].value.innerText);
+    }
+alert(total);
+   
+}
+
+
+
+
+
 
 
 
